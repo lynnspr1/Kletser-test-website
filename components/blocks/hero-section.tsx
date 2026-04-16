@@ -64,6 +64,7 @@ export function HeroSection() {
         src="/brand_assets/drinks.png"
         alt=""
         aria-hidden="true"
+        className="hero-illustration"
         style={{
           position: "absolute",
           right: "-2%",
@@ -80,6 +81,7 @@ export function HeroSection() {
       {/* Handwritten accent — above the glasses */}
       <span
         aria-hidden="true"
+        className="hero-accent"
         style={{
           ...fontAccent,
           position: "absolute",
@@ -97,7 +99,7 @@ export function HeroSection() {
       </span>
 
       {/* Two-column grid: left = content, right = illustration */}
-      <div style={{
+      <div className="hero-grid" style={{
         maxWidth: 1200,
         margin: "0 auto",
         padding: "0 2rem",
@@ -111,7 +113,7 @@ export function HeroSection() {
       }}>
 
         {/* Left column — content */}
-        <div style={{
+        <div className="hero-content" style={{
           padding: "5rem 3rem 6rem 0",
           display: "flex",
           flexDirection: "column",
@@ -178,8 +180,7 @@ export function HeroSection() {
             margin: "0 0 2rem",
             fontWeight: 400,
           }}>
-            Kom langs voor koffie, wat lekkers of een borrel<br />
-            en blijf gerust wat langer hangen.
+            Kom langs voor koffie, wat lekkers of een borrel en blijf gerust wat langer hangen.
           </p>
 
           {/* CTAs */}
@@ -274,7 +275,18 @@ export function HeroSection() {
 
       <style>{`
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .hero-content {
+            padding: 3rem 0 5rem 0 !important;
+          }
+          .hero-illustration {
+            display: none !important;
+          }
+          .hero-accent {
+            display: none !important;
+          }
         }
       `}</style>
     </section>
